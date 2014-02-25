@@ -37,6 +37,7 @@ configure do
   set :slim, :pretty => true
   set :css_style => :expanded
   enable :sessions
+  set :session_secret, ENV['SESSION_SECRET']
 end
 
 get '/' do
