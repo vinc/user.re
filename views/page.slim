@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title == @title
+    link href="/styles/screen.css" rel="stylesheet" type="text/css"
+
+  body
+    header
+      - if @username == @author
+        // p == @username
+        p
+          a href="/edit/#{@path}" Edit
+      - elsif @username
+        // p == @username
+      - else
+        p
+          a href="/login" Login
+    .content == @content

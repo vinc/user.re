@@ -1,0 +1,87 @@
+@mixin vendor-prefix($name, $args) {
+  -webkit-#{$name}: $args;
+     -moz-#{$name}: $args;
+      -ms-#{$name}: $args;
+       -o-#{$name}: $args;
+          #{$name}: $args;
+}
+
+@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css);
+@import url(//fonts.googleapis.com/css?family=Bitter:700|Open+Sans|Inconsolata);
+
+body {
+  font-family: "Open Sans", sans-serif;
+  max-width: 46em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+h2 {
+  font-size: 2em;
+}
+h1, h2, h3 {
+  color: #666;
+  font-family: "Bitter", serif;
+}
+p, ul, input, textarea, code {
+  color: #555;
+}
+a {
+  color: teal;
+}
+input[type="submit"] {
+  border: solid 1px #eee;
+  border-radius: 3px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.25);
+  opacity: 0.5;
+  outline: none;
+  padding: 5px;
+  color: #999;
+  background: #f6f6f6;
+  @include vendor-prefix(transition, 0.2s);
+  @include vendor-prefix(transition, opacity 1s);
+}
+input[type="submit"]:hover {
+  border-color: #ddd;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+input[type="submit"]:active {
+  border-color: #ddd;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+textarea {
+  border: solid 1px transparent;
+  border-radius: 3px;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 1.1em;
+  outline: none;
+  padding: 5px;
+  resize: none;
+  width: 100%;
+  @include vendor-prefix(transition, 1s);
+  //@include vendor-prefix(transition, 0.2s);
+}
+form:hover {
+  textarea {
+    border-color: #eee;
+    box-shadow: 0 0 6px #eee inset;
+  }
+  input[type="submit"] {
+    opacity: 1;
+  }
+}
+form p {
+  text-align: center;
+}
+code {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 1.1em;
+}
+pre {
+    background: #eee;
+    padding: 1em;
+    border-radius: 3px;
+}

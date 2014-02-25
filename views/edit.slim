@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Edit
+    link href="/styles/screen.css" rel="stylesheet" type="text/css"
+
+  body
+    form action="" method="post"
+      p
+        textarea name="content" rows="30" placeholder="Start typing..." autofocus="autofocus"
+          = @content
+      p
+        input type="submit" value="Publish"

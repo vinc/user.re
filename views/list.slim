@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title == @title
+    link href="/styles/screen.css" rel="stylesheet" type="text/css"
+
+  body
+    .content
+      h1 == "Index of /#{@path}"
+      ul
+      - unless @path.empty?
+        li
+          a href=".." ..
+      - for file in @files
+        li
+          a href="#{request.path}#{file}"
+            = file
